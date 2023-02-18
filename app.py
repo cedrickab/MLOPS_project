@@ -2,22 +2,29 @@ import dash
 from dash import Dash 
 from dash import Output, Input, html, dcc, State
 from dash.exceptions import PreventUpdate
-
+import classnames
 
 app = dash.Dash()
 
 
-app.layout = html.Div(children=[html.H1("MLOPS"),
-    dcc.Input(id="Anime_Title",placeholder="Anime Title"),
-    dcc.Input(id="Anime_Genre(s)",placeholder="Anime Genre(s)"),
-    dcc.Input(id="Anime_Description",placeholder="Anime Description"),
-    dcc.Input(id="Anime_Type",placeholder="Anime Type"),
-    dcc.Input(id="Anime_Producer",placeholder="Anime Producer"),
-    dcc.Input(id="Anime_Studio",placeholder="Anime Studio"),
-    html.Button('Submit', id='btn'),
+app.layout = html.Div(children=[html.H1("MLOPS",style={'color':'blue',"text-align":"center"}),
+
+    html.Div(children=[                            
+    dcc.Dropdown(id="Anime_Title",placeholder="Anime Title",options=classnames.options_producer),
+    dcc.Dropdown(id="Anime_Genre(s)",placeholder="Anime Genre(s)"),
+    dcc.Dropdown(id="Anime_Description",placeholder="Anime Description"),
+    dcc.Dropdown(id="Anime_Type",placeholder="Anime Type"),
+    dcc.Dropdown(id="Anime_Producer",placeholder="Anime Producer"),
+    dcc.Dropdown(id="Anime_Studio",placeholder="Anime Studio"),
+    html.Button('Submit', id='btn', style={"margin-top":"5%","align-items": "center"}),
     html.Div(id="result")
-    
-])
+
+    ],
+    style={"margin-top":"15%","margin-bottom":"15%","margin-left":"15%","margin-right":"15%"}
+    )
+],
+
+)
 
 @app.callback(Output(component_id="result",component_property="children"),
               [Input(component_id="btn",component_property='n_clicks')],
