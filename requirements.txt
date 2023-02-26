@@ -1,7 +1,6 @@
 numpy
 pandas
-scipy 
-scikit-image
+pyhull
 scikit_learn==1.2.1
 dash==2.8.1
 Flask==2.2.3
