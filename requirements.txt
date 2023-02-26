@@ -1,6 +1,6 @@
 numpy
 pandas
-qhull
+Scipy
 scikit-image
 scikit_learn==1.2.1
 dash==2.8.1
