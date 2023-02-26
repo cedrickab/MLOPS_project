@@ -18,6 +18,7 @@ pipeline {
         stage('requirements') {
             steps {
                 bat 'python.exe -m pip install --upgrade pip'
+                bat 'conda install -c conda-forge/label/cf202003 qhull'
                 bat 'python -m pip install -r requirements.txt'
                 bat 'python -m pip uninstall -y numpy'
                 bat 'python.exe -m pip install numpy==1.22.4'
