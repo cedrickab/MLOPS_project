@@ -1,7 +1,6 @@
 numpy
 pandas
-pyhull
-scikit_learn==1.2.1
+scikit_learn
 dash==2.8.1
 Flask==2.2.3
 joblib==1.1.1
