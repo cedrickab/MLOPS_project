@@ -1,5 +1,6 @@
 numpy
 pandas
+typing
 scikit_learn
 dash==2.8.1
 Flask==2.2.3
