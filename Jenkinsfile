@@ -1,3 +1,5 @@
+/* Requires the Docker Pipeline plugin , blue ocean plugin & ssh agent puglin & git plugin  */
+
 pipeline {
        
     agent any
