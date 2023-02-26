@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'github_ssh', url: 'https://github.com/cedrickab/MLOPS_project.git'
+                git branch: 'arthy', credentialsId: 'github_ssh', url: 'https://github.com/cedrickab/MLOPS_project.git'
             }
         }   
         stage('Build Backend Image') {
