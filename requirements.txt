@@ -1,0 +1,12 @@
+# external requirements
+dash
+requests
+gunicorn
+pandas
+flask
+numpy
+joblib
+nltk
+sklearn
+scikit_learn
+pylance
