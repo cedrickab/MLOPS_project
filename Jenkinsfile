@@ -28,6 +28,7 @@ pipeline {
         }
         stage('testing') {
             steps {
+                bat 'python ML.py'
                 bat 'python backend.py'
                 bat 'python app.py'
                 bat 'python unitest.py'
