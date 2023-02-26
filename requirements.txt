@@ -4,7 +4,7 @@ scikit_learn
 dash==2.8.1
 Flask==2.2.3
 joblib==1.1.1
-locustio==0.999
+locust 2.14.2
 nltk==3.6.2
 requests==2.26.0
 
