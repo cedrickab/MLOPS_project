@@ -17,6 +17,7 @@ pipeline {
                   
         stage('requirements') {
             steps {
+                bat 'python.exe -m pip install --upgrade pip'
                 bat 'python -m pip install -r requirements.txt'
                 // bat 'python -m pip install Flask'
                 // bat 'python -m pip install numpy'
