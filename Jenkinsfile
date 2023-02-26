@@ -20,7 +20,7 @@ pipeline {
                 bat 'python.exe -m pip install --upgrade pip'
                 bat 'python -m pip install -r requirements.txt'
                 bat 'python -m pip uninstall -y numpy'
-                bat 'python.exe -m pip install --upgrade numpy'
+                bat 'python.exe -m pip install numpy==1.22.4'
             }
         }
         stage('testing') {
