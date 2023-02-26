@@ -7,6 +7,5 @@ flask
 numpy
 joblib
 nltk
-sklearn
 scikit_learn
 pylance
