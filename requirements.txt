@@ -8,4 +8,3 @@ numpy
 joblib
 nltk
 scikit_learn
-pylance
