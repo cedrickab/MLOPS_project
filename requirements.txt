@@ -1,9 +1,10 @@
+numpy
+pandas
+scikit_learn
 dash==2.8.1
 Flask==2.2.3
 joblib==1.1.1
 locustio==0.999
 nltk==3.6.2
-numpy
-pandas
 requests==2.26.0
-scikit_learn==1.2.1
+
