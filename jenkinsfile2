@@ -1,0 +1,28 @@
+/* Requires the Docker Pipeline plugin , blue ocean plugin & ssh agent puglin & git plugin  */
+
+
+pipeline {
+    agent any    
+    stages {
+           stage('connexion'){      
+           steps {
+                git branch: 'cedric', credentialsId: 'SSH', url: 'git@github.com:cedrickab/MLOPS_project.git'
+                  }
+                }
+                  
+        stage('requirements') {
+            steps {
+                bat 'python.exe -m pip install --upgrade pip'
+                bat 'python -m pip install -r requirements.txt'
+            }
+        }
+        stage('testing') {
+            steps {
+                bat 'python ML2.py'
+                bat 'python unitest.py'
+                bat 'python -m locust -f stress_test.py --headless -u 10 -r 10 --run-time 1m --host http://127.0.0.1:5000'             
+                
+            }
+        }
+    }
+}
