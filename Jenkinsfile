@@ -5,7 +5,7 @@ pipeline {
     agent any
     
     environment {
-        PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Users\\hp\\anaconda3;C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python37-32\\Scripts;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin"
+        PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Users\\hp\AppData\\Local\\Programs\\Python\\Python37-32;C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python37-32\\Scripts;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin"
         }
     
     stages {
@@ -18,10 +18,7 @@ pipeline {
         stage('requirements') {
             steps {
                 bat 'python.exe -m pip install --upgrade pip'
-                bat 'conda install -c conda-forge/label/cf202003 qhull'
                 bat 'python -m pip install -r requirements.txt'
-                bat 'python -m pip uninstall -y numpy'
-                bat 'python.exe -m pip install numpy==1.22.4'
             }
         }
         stage('testing') {
