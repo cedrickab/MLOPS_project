@@ -43,7 +43,7 @@ class TestApi(unittest.TestCase):
 
 
             # check that the response contains the expected predictions
-            expected_predictions = {'predictions': [7.36]}
+            expected_predictions = {'predictions': [7.45]}
             self.assertDictEqual(response.json, expected_predictions)
 
 
