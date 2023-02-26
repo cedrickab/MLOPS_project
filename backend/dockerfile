@@ -1,0 +1,19 @@
+FROM python:3.9.5
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY . /app/
+COPY . /app/callbacks
+COPY . /app/data
+COPY . /app/data/model
+COPY data/raw_data ../../data/raw_data/
+
+
+EXPOSE 5000
+
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "data.model.ML:app","data.model.predict:app"]
+
