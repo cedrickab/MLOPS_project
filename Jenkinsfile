@@ -45,7 +45,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sshagent(credentials: ['project_ssh']) {
-                    sh 'ssh user@server "docker-compose -f /home/user/Project_MLOPS/docker-compose.yml pull && docker-compose -f /home/user/Project_MLOPS/docker-compose.yml up -d"'
+                    sh 'docker-compose -f /home/user/Project_MLOPS/docker-compose.yml build'
+                    sh 'docker-compose -f /home/user/Project_MLOPS/docker-compose.yml up -d'   
 
 
 
