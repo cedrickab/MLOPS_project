@@ -1,0 +1,6 @@
+# external requirements
+dash
+requests
+gunicorn
+pandas
+pylance
