@@ -25,6 +25,7 @@ pipeline {
             steps {
                 bat 'python ML2.py'
                 bat 'python unitest.py'
+                bat 'start cmd /c "python backend.py & exit"'
                 bat 'python -m locust -f stress_test.py --headless -u 10 -r 10 --run-time 1m --host http://127.0.0.1:5000'             
                 
             }
