@@ -17,7 +17,7 @@ pipeline {
                   
         stage('requirements') {
             steps {
-                bat 'pip install -r requirements.txt'
+                bat 'C:\Users\hp\AppData\Local\Programs\Python\Python37-32\Scripts\pip.exe install -r requirements.txt'
                 // bat 'python -m pip install Flask'
                 // bat 'python -m pip install numpy'
                 // bat 'python -m pip install pandas'
