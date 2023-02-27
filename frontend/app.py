@@ -27,13 +27,13 @@ print(df.head())
 # print(l)
 
 app_layout = html.Div(children=[
-    html.H1("MLOPS"),
+    html.H1("MLOPS",style={"background-color":"#E76C17","text-align":"center"}),
     dcc.Input(id="Anime_Title", placeholder="Anime Title"),
-    dcc.Dropdown(id="Anime_Genre", options=treat_to_options.intro_options(df["Genre"]), multi=True, placeholder="Anime Genre(s)"),
-    dcc.Textarea(id="Anime_Description",style={'width': '100%', 'height': 300}, placeholder="Enter anime description"),
-    dcc.Dropdown(id="Anime_Type", options=treat_to_options.intro_options(df["Type"]),placeholder="Anime Type"),
-    dcc.Dropdown(id="Anime_Producer", options=treat_to_options.intro_options(df["Producer"]), multi=True, placeholder="Anime Producer"),
-    dcc.Dropdown(id="Anime_Studio", options=treat_to_options.intro_options(df["Studio"]), multi=True, placeholder="Anime Studio"),
+    dcc.Dropdown(id="Anime_Genre", options=treat_to_options.intro_options(df["Genre"]), multi=True, placeholder="Anime Genre(s)",style={"margin-top":"1%"}),
+    dcc.Textarea(id="Anime_Description",style={'width': '100%', 'height': 300,"margin-top":"1%"}, placeholder="Enter anime description"),
+    dcc.Dropdown(id="Anime_Type", options=treat_to_options.intro_options(df["Type"]),placeholder="Anime Type",style={"margin-top":"1%"}),
+    dcc.Dropdown(id="Anime_Producer", options=treat_to_options.intro_options(df["Producer"]), multi=True, placeholder="Anime Producer",style={"margin-top":"1%"}),
+    dcc.Dropdown(id="Anime_Studio", options=treat_to_options.intro_options(df["Studio"]), multi=True, placeholder="Anime Studio",style={"margin-top":"1%"}),
     html.Div(id="other_producer_div", style={"display": "none"}, children=[
         dcc.Input(id="Other_Producer", placeholder="Enter Other Producer")
     ]),
@@ -41,7 +41,7 @@ app_layout = html.Div(children=[
         dcc.Input(id="Other_Studio", placeholder="Enter Other Studio")
     ]),
     html.Button('Submit', id='btn'),
-    html.Div(id="result")
+    html.Div(id="result",style={"margin-top":"1%","text-align":"center"})
 ])
 
 
