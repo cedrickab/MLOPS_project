@@ -44,7 +44,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sshagent(credentialsId: ['github_ssh']) {
+                sshagent(credentials: ['github_ssh']) {
                     sh 'docker-compose -f C:\\Users\\Arthy\\Desktop\\Project_MLOPS\\docker-compose.yml build'
                     sh 'docker-compose -f C:\\Users\\Arthy\\Desktop\\Project_MLOPS\\docker-compose.yml up -d'   
 
