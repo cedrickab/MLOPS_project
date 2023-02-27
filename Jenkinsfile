@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'arthy', credentials: 'github_ssh', url: 'https://github.com/cedrickab/MLOPS_project.git'
+                git branch: 'arthy', credentialsId: 'github_ssh', url: 'https://github.com/cedrickab/MLOPS_project.git'
             }
         }   
         stage('Build Backend Image') {
@@ -44,7 +44,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sshagent(credentials: ['github_ssh']) {
+                sshagent(credentialsId: ['github_ssh']) {
                     sh 'docker-compose -f C:\\Users\\Arthy\\Desktop\\Project_MLOPS\\docker-compose.yml build'
                     sh 'docker-compose -f C:\\Users\\Arthy\\Desktop\\Project_MLOPS\\docker-compose.yml up -d'   
 
