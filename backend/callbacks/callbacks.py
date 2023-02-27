@@ -27,11 +27,11 @@ def register_callbacks(app):
                 raise PreventUpdate
             else:
                 data = {"Title":Anime_Title,
-                        "Genre":Anime_Genre,
+                        "Genre":[Anime_Genre],
                         "Synopsis":Anime_Description,
                         "Type":Anime_Type,
-                        "Producer":Anime_Producer,
-                        "Studio":Anime_Studio
+                        "Producer":[Anime_Producer],
+                        "Studio":[Anime_Studio]
                         }
                 print(data)
                 p=predict.predict(data)
