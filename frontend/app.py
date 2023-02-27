@@ -30,7 +30,7 @@ app_layout = html.Div(children=[
     html.H1("MLOPS"),
     dcc.Input(id="Anime_Title", placeholder="Anime Title"),
     dcc.Dropdown(id="Anime_Genre", options=treat_to_options.intro_options(df["Genre"]), multi=True, placeholder="Anime Genre(s)"),
-    dcc.Input(id="Anime_Description", placeholder="Anime Description"),
+    dcc.Textarea(id="Anime_Description",style={'width': '100%', 'height': 300}, placeholder="Enter anime description"),
     dcc.Dropdown(id="Anime_Type", options=treat_to_options.intro_options(df["Type"]),placeholder="Anime Type"),
     dcc.Dropdown(id="Anime_Producer", options=treat_to_options.intro_options(df["Producer"]), multi=True, placeholder="Anime Producer"),
     dcc.Dropdown(id="Anime_Studio", options=treat_to_options.intro_options(df["Studio"]), multi=True, placeholder="Anime Studio"),
